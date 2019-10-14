@@ -1,0 +1,11 @@
+[home]
+marina@192.168.1.154
+adminer@192.168.1.101
+
+[admin]
+adminer@192.168.1.101
+
+[admin:vars]
+ansible_sudo_pass='i am not the mind'
+
+[herder]

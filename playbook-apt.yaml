@@ -1,0 +1,23 @@
+---
+- hosts: home
+  # remote_user: root
+  become: yes
+
+  tasks:
+  - name: install needed aps
+    yum:
+      name: marble
+      state: latest
+  - name: Install a list of packages
+    apt:
+      name: "{{ packages }}"
+    vars:
+      packages:
+      - geogebra    # geogebra
+      - squeak-vm   # scratch
+      - veyon       # remote control
+      - openssh-server   # ssh remotely
+      - gimp        # image editor
+      - josm        # maps
+      - marble      # maps
+      - gnome-maps  # maps
