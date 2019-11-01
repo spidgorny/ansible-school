@@ -18,3 +18,9 @@ adminer@192.168.1.135 ansible_ssh_private_key_file=id_rsa
 
 [IPC0494]
 adminer@192.168.1.101 ansible_ssh_private_key_file=id_rsa
+
+[ip76]
+192.168.1.76 ansible_ssh_private_key_file=id_rsa
+
+[ip76:vars]
+ansible_sudo_pass='i am not the mind'

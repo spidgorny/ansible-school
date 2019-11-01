@@ -1,5 +1,5 @@
 ---
-- hosts: herder
+- hosts: ip76
   remote_user: user
   become: no
 

@@ -1,5 +1,5 @@
 ---
-- hosts: herder
+- hosts: ip76
   remote_user: adminer
   become: yes
 
@@ -17,6 +17,18 @@
       - josm        # maps
       - marble      # maps
       - gnome-maps  # maps
-      - python-pip
+      - python-pip  # for gsettings
   - pip:
       name: psutil
+
+  - name: Ensure group "user" exists
+    group:
+      name: user
+      state: present
+
+  - name: Add the user 'user'
+    user:
+      name: user
+      comment: User
+      group: user
+      password: $6$ip76$nrQpcvpuoVJoFjBNoPsFeRRe8XbfEklp2M8.xkTKylaGZj2Ta6hxstKFghF2Dow3HNumNen30/9TDiQy.kNro/
