@@ -1,13 +1,9 @@
 ---
-- hosts: home
-  # remote_user: root
+- hosts: herder
+  remote_user: adminer
   become: yes
 
   tasks:
-  - name: install needed aps
-    yum:
-      name: marble
-      state: latest
   - name: Install a list of packages
     apt:
       name: "{{ packages }}"
@@ -21,3 +17,6 @@
       - josm        # maps
       - marble      # maps
       - gnome-maps  # maps
+      - python-pip
+  - pip:
+      name: psutil

@@ -1,0 +1,21 @@
+---
+- hosts: herder
+  remote_user: user
+  become: no
+
+# https://github.com/gantsign/ansible-role-pin-to-launcher
+  # roles:
+    # - role: gantsign.pin-to-launcher
+    #   pin_to_launcher: gnome
+    #   pin_to_launcher_favorites:
+    #     - application 'libreoffice-math.desktop'
+
+  vars:
+     contents: "{{ lookup('file', 'favorites') }}"
+
+  tasks:
+    - name: set desktop icons
+      dconf:
+        key: "/org/gnome/shell/favorite-apps"
+        value: "{{ contents }}"
+        state: present
