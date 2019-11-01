@@ -8,5 +8,13 @@ adminer@192.168.1.101
 [admin:vars]
 ansible_sudo_pass='i am not the mind'
 
-[herder]
+[herder-offline]
 adminer@192.168.1.31 ansible_ssh_private_key_file=id_rsa
+adminer@192.168.1.105 ansible_ssh_private_key_file=id_rsa
+adminer@192.168.1.48 ansible_ssh_private_key_file=id_rsa
+
+[herder]
+adminer@192.168.1.135 ansible_ssh_private_key_file=id_rsa
+
+[IPC0494]
+adminer@192.168.1.101 ansible_ssh_private_key_file=id_rsa

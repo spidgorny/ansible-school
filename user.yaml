@@ -19,3 +19,15 @@
         key: "/org/gnome/shell/favorite-apps"
         value: "{{ contents }}"
         state: present
+
+    - name: Configure available keyboard layouts in Gnome
+      dconf:
+        key: "/org/gnome/desktop/input-sources/sources"
+        value: "[('xkb', 'de'), ('xkb', 'us')]"
+        state: present
+
+    - name: Read currently available keyboard layouts in Gnome
+      dconf:
+        key: "/org/gnome/desktop/input-sources/sources"
+        state: read
+      register: keyboard_layouts
