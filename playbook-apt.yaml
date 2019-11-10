@@ -1,9 +1,14 @@
 ---
-- hosts: ip76
+-
+  hosts: ip172
   remote_user: adminer
   become: yes
+  # ansible_ssh_private_key_file: id_rsa
 
   tasks:
+  - name: Add veyon repo
+    apt_repository:
+      repo: ppa:veyon/stable
   - name: Install a list of packages
     apt:
       name: "{{ packages }}"

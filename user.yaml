@@ -1,5 +1,6 @@
 ---
-- hosts: ip76
+-
+  hosts: ip172
   remote_user: user
   become: no
 
